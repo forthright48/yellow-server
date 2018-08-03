@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  db:
+    image: mongo:3.4
+    networks:
+      - ntw
+    volumes:
+      - db_data:/data/db
+    restart: always
+    container_name: yellowdb
+  app:
+    build: .
+    image: cpps
+    depends_on:
+      - db
+    ports:
+      - "${PORT}:8002"
+    networks:
+      - ntw
+    volumes:
+      - logs:/home/src/logs
+      - ./:/root/src/
+    command: tail -f /dev/null
+    environment:
+      - NODE_ENV
+    container_name: yellowserver
+
+networks:
+  ntw:
+
+volumes:
+  db_data:
+  db:
+  app:
+  logs:
+  redis_db:

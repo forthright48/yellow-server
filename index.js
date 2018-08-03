@@ -14,11 +14,11 @@ app.use(bodyParser.urlencoded({
   extended: true,
 })); // support encoded bodies
 
-// config.database.init();
+config.database.init();
 // config.session.init(app);
 
 // /* Models*/
-// require('./models/userModel.js');
+// require('./models/modelUser.js');
 // require('./models/gateModel.js');
 // require('./models/problemBankModel.js');
 
