@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 
 services:
   db:
@@ -28,6 +28,7 @@ services:
 
 networks:
   ntw:
+    name: yellow_ntw
 
 volumes:
   db_data:

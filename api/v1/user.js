@@ -7,7 +7,7 @@ router.post('/user/:username', postUser);
 
 module.exports = {
   addRouter(app) {
-    app.use('/api/public', router);
+    app.use('/api/v1', router);
   },
 };
 
@@ -29,6 +29,7 @@ async function postUser(req, res, next) {
 
     return res.status(201).json({
       status: 201,
+      data: req.body,
     });
   } catch (err) {
       next(err);

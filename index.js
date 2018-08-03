@@ -17,10 +17,8 @@ app.use(bodyParser.urlencoded({
 config.database.init();
 // config.session.init(app);
 
-// /* Models*/
-// require('./models/modelUser.js');
-// require('./models/gateModel.js');
-// require('./models/problemBankModel.js');
+/* Models*/
+require('./model/modelUser.js');
 
 /* Middlewares */
 app.use(morgan('dev'));
@@ -29,10 +27,7 @@ app.use(morgan('dev'));
 
 require('./api/public/test.js').addRouter(app);
 
-// require('./api/v1/users.js').addRouter(app);
-// require('./api/v1/ojInfo.js').addRouter(app);
-// require('./api/v1/gateway.js').addRouter(app);
-// require('./api/v1/problemBank.js').addRouter(app);
+require('./api/v1/user.js').addRouter(app);
 
 /* Error Handling */
 app.use('/api/', function(err, req, res, next) {

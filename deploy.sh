@@ -47,17 +47,17 @@ if [[ $TYPE = "dev" ]] ; then
 elif [[ $TYPE == "build" ]] ; then 
   docker-compose down
   docker-compose build
-  docker-command up
+  docker-compose up
 # elif [[ $TYPE = "mongo" ]] ; then
 #   docker exec -it yellowdb mongo
-# elif [[ $TYPE = "mongo-express" ]] ; then
-#   docker run -it --rm \
-#       --name mongo-express \
-#       --network cpps2_ntw \
-#       --link cpps2_db_1:mongo \
-#       -p 8081:8081 \
-#       -e ME_CONFIG_OPTIONS_EDITORTHEME="ambiance" \
-#       mongo-express
+elif [[ $TYPE = "mongo-express" ]] ; then
+  docker run -it --rm \
+      --name mongo-express \
+      --network yellow_ntw \
+      --link yellowdb:mongo \
+      -p 8081:8081 \
+      -e ME_CONFIG_OPTIONS_EDITORTHEME="ambiance" \
+      mongo-express
 # elif [[ $TYPE = "init" ]] ; then
 #   docker exec -it cpps2_app_1 node /root/src/server/scripts/dbInit.js
 # elif [[ $TYPE = "mongo-backup" ]]; then
