@@ -24,6 +24,7 @@ async function postUser(req, res, next) {
     }, {
       presence,
       dnd,
+      dndStartTime: Date.now(),
     }, {
       upsert: true,
     });

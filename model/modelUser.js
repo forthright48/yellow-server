@@ -16,6 +16,12 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  dndStartTime: Number, // In milliseconds
+  dndLength: Number, // In seconds
+  friends: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+  }],
 }, {
   timestamps: true,
 });
