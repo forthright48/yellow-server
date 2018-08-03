@@ -27,7 +27,7 @@ app.use(morgan('dev'));
 
 /* API Public*/
 
-// require('./api/public/auth.js').addRouter(app);
+require('./api/public/test.js').addRouter(app);
 
 // require('./api/v1/users.js').addRouter(app);
 // require('./api/v1/ojInfo.js').addRouter(app);
