@@ -1,0 +1,28 @@
+{
+  "name": "yellow-submarine-server",
+  "version": "0.0.0",
+  "description": "Server for yellow submarine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammad Samiul Islam <forthright48@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^8.2.6",
+    "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
+    "eslint": "^5.2.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-html": "^4.0.5",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "global": "^4.3.2",
+    "mongoose": "^5.2.6",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3",
+    "validator": "^10.4.0",
+    "winston": "^3.0.0"
+  }
+}
