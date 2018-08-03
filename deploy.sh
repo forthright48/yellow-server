@@ -47,7 +47,6 @@ if [[ $TYPE = "dev" ]] ; then
 elif [[ $TYPE == "build" ]] ; then 
   docker-compose down
   docker-compose build
-  docker-compose up
 # elif [[ $TYPE = "mongo" ]] ; then
 #   docker exec -it yellowdb mongo
 elif [[ $TYPE = "mongo-express" ]] ; then
