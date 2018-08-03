@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('mongoose').model('User');
 const logger = require('custom_modules').logger;
 
+router.get('/user', getUsers);
 router.post('/user/:username', postUser);
 
 module.exports = {
@@ -33,5 +34,17 @@ async function postUser(req, res, next) {
     });
   } catch (err) {
       next(err);
+  }
+}
+
+async function getUsers(req, res, next) {
+  try {
+    const users = await User.find({});
+    return res.status(200).json({
+      status: 200,
+      data: users,
+    });
+  } catch (err) {
+    next(err);
   }
 }
